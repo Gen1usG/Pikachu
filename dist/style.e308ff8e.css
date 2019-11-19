@@ -5,24 +5,29 @@
     box-sizing: border-box;
 }
 body{
+    
+    min-height: 100vh; 
     background-color: #ffe600;
-    min-width: 100vw;
-    min-height: 100vh;
-    /* position: relative; */
 }
+.skin{
+    position: relative;
+}
+
 
 .nose{
     border-top:black 15px solid;
     border-right:transparent 20px solid;
     border-bottom:15px solid transparent;
     border-left:20px solid transparent;
+    border-bottom: none;
     border-radius: 100%;
     width: 40px;
     height: 40px;
     position:relative;
     left:50%;
-    top:50%;
-    transform: translateX(-20px) translateY(-20px);
+    top:145px;
+    transform: translateX(-20px) translateY(-0px);
+    z-index: 20;
 }
 
 .eyes{
@@ -33,7 +38,7 @@ body{
     background-color: #2e2e2e;
     position:absolute;
     left:50%;
-    top:150px;
+    top:110px;
     transform: translateX(-30px)
 }
 
@@ -58,5 +63,26 @@ body{
     position:absolute;
     left:6px;
 }
+
+.lips{
+    border:3px solid black;
+    width: 80px;
+    height: 30px;
+    border-right:none;
+    border-bottom:none;
+    border-top-left-radius: 50px 30px;
+    position: absolute;
+    left: 50%;
+    top:180px;
+}
+.leftLips{
+    transform-origin: right top;
+    transform: translateX(-81px) rotate(-160deg)
+}
+.rightLips{
+    transform-origin: right top;
+    transform: translateX(-79px) rotate(160deg) rotateY(180deg)
+}
+
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

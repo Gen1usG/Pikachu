@@ -1,0 +1,60 @@
+/* css reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffe600;
+    min-width: 100vw;
+    min-height: 100vh;
+    /* position: relative; */
+}
+
+.nose{
+    border-top:black 15px solid;
+    border-right:transparent 20px solid;
+    border-bottom:15px solid transparent;
+    border-left:20px solid transparent;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translateX(-20px) translateY(-20px);
+}
+
+.eyes{
+    border:3px solid black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2e2e2e;
+    position:absolute;
+    left:50%;
+    top:150px;
+    transform: translateX(-30px)
+}
+
+.leftEye{
+    margin-left:150px;
+}
+
+.rightEye{
+    margin-left:-150px;
+}
+
+
+
+.eyes::before{
+    display: block;
+    content:'';
+    border:3px solid #000;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    position:absolute;
+    left:6px;
+}

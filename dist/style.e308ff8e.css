@@ -5,14 +5,12 @@
     box-sizing: border-box;
 }
 body{
-    
     min-height: 100vh; 
     background-color: #ffe600;
 }
 .skin{
     position: relative;
 }
-
 
 .nose{
     border-top:black 15px solid;
@@ -66,7 +64,7 @@ body{
 
 .lips{
     border:3px solid black;
-    width: 80px;
+    width: 100px;
     height: 30px;
     border-right:none;
     border-bottom:none;
@@ -74,14 +72,66 @@ body{
     position: absolute;
     left: 50%;
     top:180px;
+    background-color: #ffe600;
+    z-index:2;
 }
 .leftLips{
     transform-origin: right top;
-    transform: translateX(-81px) rotate(-160deg)
+    transform: translateX(-101px) rotate(-160deg)
 }
 .rightLips{
     transform-origin: right top;
-    transform: translateX(-79px) rotate(160deg) rotateY(180deg)
+    transform: translateX(-99px) rotate(160deg) rotateY(180deg)
+}
+
+.mouth{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left:50%;
+    top:177px;
+    transform: translateX(-100px);
+    overflow: hidden;
+}
+.innerMouth{
+    width: 100%;
+    height: 1000px;
+    border:3px solid black;
+    background-color: #9b000a;
+    border-radius: 50%;
+    position: absolute;
+    top:-811px;
+    overflow: hidden;
+}
+.touth{
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    z-index:1;
+    border-radius: 50%;
+    position: absolute;
+    top:850px;
+    left:50%;
+    transform: translateX(-150px);
+    background-color: #ff485f;
+}
+
+.face{
+    width: 74px;
+    height:74px;
+    border:3px solid black;
+    border-radius: 50%;
+    background-color: #ff0000;
+    position: absolute;
+    left:50%;
+    top:240px;
+    transform: translateX(-37px);
+}
+.leftface{
+    margin-left:-200px;
+}
+.rightface{
+    margin-left:200px;
 }
 
 

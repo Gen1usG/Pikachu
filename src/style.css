@@ -24,8 +24,26 @@ body{
     position:relative;
     left:50%;
     top:145px;
-    transform: translateX(-20px) translateY(-0px);
+    margin-left:-20px;
     z-index: 20;
+}
+.nose:hover{
+    animation: noseWave infinite 100ms;
+}
+
+@keyframes noseWave{
+    0%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(-5deg);
+    }
+    66%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }
 
 .eyes{
@@ -47,8 +65,6 @@ body{
 .rightEye{
     margin-left:-150px;
 }
-
-
 
 .eyes::before{
     display: block;

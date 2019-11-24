@@ -8,9 +8,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pikachu</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        .html-contain {
+            height: 50vh;
+        }
+
+        .button-contain {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            right: 20px;
+            top: 10px;
+        }
+
+        .btn {
+            margin: 10px;
+            width: 45px;
+            height: 30px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="html-contain"></div>
+    <style id='style-contain'></style>
+
+    <div class="button-contain">
+        <button class="btn btn-play">播放</button>
+        <button class="btn btn-pause">暂停</button>
+        <button class="btn btn-slow">慢速</button>
+        <button class="btn btn-normal">中速</button>
+        <button class="btn btn-fast">快速</button>
+    </div>
     <div class="skin">
         <div class="eyes leftEye"></div>
         <div class="eyes rightEye"></div>

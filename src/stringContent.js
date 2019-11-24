@@ -12,7 +12,7 @@ body{
     bottom:0;
     background-color: #ffe600;
     position: relative;
-    min-height: 400px;
+    min-height: 55vh;
 }
 
 .nose{
@@ -25,7 +25,7 @@ body{
     height: 0px;
     position:relative;
     left:50%;
-    top:145px;
+    top:95px;
     margin-left:-20px;
     z-index: 20;
 }
@@ -56,7 +56,7 @@ body{
     background-color: #2e2e2e;
     position:absolute;
     left:50%;
-    top:110px;
+    top:60px;
     transform: translateX(-30px)
 }
 
@@ -89,7 +89,7 @@ body{
     border-top-left-radius: 50px 30px;
     position: absolute;
     left: 50%;
-    top:180px;
+    top:130px;
     background-color: #ffe600;
     z-index:2;
 }
@@ -107,7 +107,7 @@ body{
     height: 200px;
     position: absolute;
     left:50%;
-    top:177px;
+    top:127px;
     transform: translateX(-100px);
     overflow: hidden;
 }
@@ -142,7 +142,7 @@ body{
     background-color: #ff0000;
     position: absolute;
     left:50%;
-    top:240px;
+    top:190px;
     transform: translateX(-37px);
 }
 .leftface{
@@ -151,7 +151,5 @@ body{
 .rightface{
     margin-left:200px;
 }
-
 `
-
 export default string

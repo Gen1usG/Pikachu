@@ -136,6 +136,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var htmlContain = document.querySelector('.html-contain');
 var styleContain = document.querySelector('#style-contain');
+var speed;
 var n = 1;
 var id = setInterval(function () {
   htmlContain.innerText = _stringContent.default.substring(0, n);
@@ -147,6 +148,28 @@ var id = setInterval(function () {
     clearInterval(id);
   }
 }, 0);
+var btnPlay = document.querySelector('.btn-play');
+var btnPause = document.querySelector('.btn-pause');
+var btnSlow = document.querySelector('.btn-slow');
+var btnNormal = document.querySelector('.btn-normal');
+var btnFast = document.querySelector('.btn-fast');
+
+btnPlay.onclick = function () {
+  id = setInterval(function () {
+    htmlContain.innerText = _stringContent.default.substring(0, n);
+    styleContain.innerHTML = _stringContent.default.substring(0, n);
+    n = n + 1;
+    htmlContain.scrollTop = htmlContain.scrollHeight;
+
+    if (n > _stringContent.default.length) {
+      clearInterval(id);
+    }
+  }, 0);
+};
+
+btnPause.onclick = function () {
+  clearInterval(id);
+};
 },{"./stringContent":"stringContent.js"}],"../../../../../Program Files/nodejs/node_global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -175,7 +198,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3887" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2607" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

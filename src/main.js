@@ -1,40 +1,62 @@
 import string from './stringContent'
 
-const htmlContain = document.querySelector('.html-contain')
-const styleContain = document.querySelector('#style-contain')
-
-let speed
-let n = 1
-let id = setInterval(() => {
-    htmlContain.innerText = string.substring(0, n)
-    styleContain.innerHTML = string.substring(0, n)
-    n = n + 1
-    htmlContain.scrollTop = htmlContain.scrollHeight
-    if (n > string.length) {
-        clearInterval(id)
-    }
-}, 0)
-
-const btnPlay = document.querySelector('.btn-play')
-const btnPause = document.querySelector('.btn-pause')
-const btnSlow = document.querySelector('.btn-slow')
-const btnNormal = document.querySelector('.btn-normal')
-const btnFast = document.querySelector('.btn-fast')
-
-btnPlay.onclick = () => {
-    id = setInterval(() => {
-        htmlContain.innerText = string.substring(0, n)
-        styleContain.innerHTML = string.substring(0, n)
-        n = n + 1
-        htmlContain.scrollTop = htmlContain.scrollHeight
-        if (n > string.length) {
-            clearInterval(id)
+const pikachu = {
+    id: undefined,
+    speed: undefined,
+    n: 1,
+    ui: {
+        'htmlContain': document.querySelector('.html-contain'),
+        'styleContain': document.querySelector('#style-contain')
+    },
+    btnTable: {
+        '.btn-play': 'play',
+        '.btn-pause': 'pause',
+        '.btn-slow': 'slow',
+        '.btn-normal': 'normal',
+        '.btn-fast': 'fast'
+    },
+    init() {
+        pikachu.play()
+        pikachu.btnevent()
+    },
+    btnevent() {
+        for (let key in pikachu.btnTable) {
+            document.querySelector(key).onclick = pikachu[pikachu.btnTable[key]]
         }
-    }, 0)
+    },
+    play() {
+        pikachu.pause()
+        pikachu.id = setInterval(() => {
+            pikachu.ui.htmlContain.innerText = string.substring(0, pikachu.n)
+            pikachu.ui.styleContain.innerHTML = string.substring(0, pikachu.n)
+            pikachu.n = pikachu.n + 1
+            pikachu.ui.htmlContain.scrollTop = pikachu.ui.htmlContain.scrollHeight
+            if (pikachu.n > string.length) {
+                clearInterval(pikachu.id)
+            }
+        }, pikachu.speed)
+    },
+    pause() {
+        clearInterval(pikachu.id)
+    },
+    slow() {
+        pikachu.speed = 100
+        pikachu.pause()
+        pikachu.play()
+    },
+    normal() {
+        pikachu.speed = 50
+        pikachu.pause()
+        pikachu.play()
+    },
+    fast() {
+        pikachu.speed = 0
+        pikachu.pause()
+        pikachu.play()
+    }
 }
 
-btnPause.onclick = () => {
-    clearInterval(id)
-}
+pikachu.init()
+
 
 

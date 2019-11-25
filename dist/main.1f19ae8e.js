@@ -134,42 +134,63 @@ var _stringContent = _interopRequireDefault(require("./stringContent"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var htmlContain = document.querySelector('.html-contain');
-var styleContain = document.querySelector('#style-contain');
-var speed;
-var n = 1;
-var id = setInterval(function () {
-  htmlContain.innerText = _stringContent.default.substring(0, n);
-  styleContain.innerHTML = _stringContent.default.substring(0, n);
-  n = n + 1;
-  htmlContain.scrollTop = htmlContain.scrollHeight;
-
-  if (n > _stringContent.default.length) {
-    clearInterval(id);
-  }
-}, 0);
-var btnPlay = document.querySelector('.btn-play');
-var btnPause = document.querySelector('.btn-pause');
-var btnSlow = document.querySelector('.btn-slow');
-var btnNormal = document.querySelector('.btn-normal');
-var btnFast = document.querySelector('.btn-fast');
-
-btnPlay.onclick = function () {
-  id = setInterval(function () {
-    htmlContain.innerText = _stringContent.default.substring(0, n);
-    styleContain.innerHTML = _stringContent.default.substring(0, n);
-    n = n + 1;
-    htmlContain.scrollTop = htmlContain.scrollHeight;
-
-    if (n > _stringContent.default.length) {
-      clearInterval(id);
+var pikachu = {
+  id: undefined,
+  speed: undefined,
+  n: 1,
+  ui: {
+    'htmlContain': document.querySelector('.html-contain'),
+    'styleContain': document.querySelector('#style-contain')
+  },
+  btnTable: {
+    '.btn-play': 'play',
+    '.btn-pause': 'pause',
+    '.btn-slow': 'slow',
+    '.btn-normal': 'normal',
+    '.btn-fast': 'fast'
+  },
+  init: function init() {
+    pikachu.play();
+    pikachu.btnevent();
+  },
+  btnevent: function btnevent() {
+    for (var key in pikachu.btnTable) {
+      document.querySelector(key).onclick = pikachu[pikachu.btnTable[key]];
     }
-  }, 0);
-};
+  },
+  play: function play() {
+    pikachu.pause();
+    pikachu.id = setInterval(function () {
+      pikachu.ui.htmlContain.innerText = _stringContent.default.substring(0, pikachu.n);
+      pikachu.ui.styleContain.innerHTML = _stringContent.default.substring(0, pikachu.n);
+      pikachu.n = pikachu.n + 1;
+      pikachu.ui.htmlContain.scrollTop = pikachu.ui.htmlContain.scrollHeight;
 
-btnPause.onclick = function () {
-  clearInterval(id);
+      if (pikachu.n > _stringContent.default.length) {
+        clearInterval(pikachu.id);
+      }
+    }, pikachu.speed);
+  },
+  pause: function pause() {
+    clearInterval(pikachu.id);
+  },
+  slow: function slow() {
+    pikachu.speed = 100;
+    pikachu.pause();
+    pikachu.play();
+  },
+  normal: function normal() {
+    pikachu.speed = 50;
+    pikachu.pause();
+    pikachu.play();
+  },
+  fast: function fast() {
+    pikachu.speed = 0;
+    pikachu.pause();
+    pikachu.play();
+  }
 };
+pikachu.init();
 },{"./stringContent":"stringContent.js"}],"../../../../../Program Files/nodejs/node_global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -198,7 +219,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2607" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "7177" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
